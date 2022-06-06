@@ -35,9 +35,6 @@ class FirstFragment : Fragment() {
             viewModel.onMinusClick()
         }
 
-//        viewModel.counter.observe(viewLifecycleOwner, Observer {
-//
-//        })
 
     }
 

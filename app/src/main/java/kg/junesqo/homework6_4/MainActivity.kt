@@ -26,10 +26,6 @@ class MainActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this)[FragmentViewModel::class.java]
 
-//        viewModel.counter.observe(this) { counter ->
-//
-//        }
-
         val adapter = ViewPagerAdapter(this, fragmentList)
         binding.viewPager2.adapter = adapter
         TabLayoutMediator(binding.tabLayout, binding.viewPager2){

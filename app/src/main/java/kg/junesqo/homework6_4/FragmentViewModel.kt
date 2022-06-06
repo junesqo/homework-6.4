@@ -7,10 +7,6 @@ import kotlin.math.log
 
 class FragmentViewModel: ViewModel() {
 
-//    fun setOperation(operation: String) {
-//        val list = ArrayList<String>()
-//        list.add(operation)
-//    }
 
     private var mCounter = 0
     private var mHistory = ""
@@ -18,29 +14,26 @@ class FragmentViewModel: ViewModel() {
     var history = MutableLiveData<String>()
     val counter = MutableLiveData<Int>()
 
-    fun showHistory(){
-        history.value = mHistory
-        Log.e("history", history.toString())
-    }
-
     fun onPlusClick() {
-        Log.e("counter: ", mCounter.toString())
         mCounter++
+        counter.value = mCounter
         mHistory = "$mHistory\n+"
         history.value = mHistory
+
+        Log.e("counter: ", mCounter.toString())
         Log.e("history: ", mHistory)
         Log.e("history: ", history.toString())
-        counter.value = mCounter
     }
 
     fun onMinusClick() {
-        Log.e("counter: ", mCounter.toString())
         mCounter--
+        counter.value = mCounter
         mHistory = "$mHistory\n-"
         history.value = mHistory
+
+        Log.e("counter: ", mCounter.toString())
         Log.e("history: ", mHistory)
         Log.e("history: ", history.toString())
-        counter.value = mCounter
     }
 
 }
