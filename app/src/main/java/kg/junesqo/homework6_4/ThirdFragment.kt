@@ -27,8 +27,8 @@ class ThirdFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.counter.observe(requireActivity(), Observer {
-            binding.tvHistory.text = viewModel.history.toString()
+        viewModel.history.observe(requireActivity(), Observer { history ->
+            binding.tvHistory.text = history.toString()
         })
 
     }
